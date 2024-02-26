@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-02-2024 a las 02:40:00
+-- Tiempo de generación: 26-02-2024 a las 18:53:33
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -40,7 +40,13 @@ INSERT INTO `cursos` (`id`, `nombreCurso`) VALUES
 (1, 'Programación básica Python'),
 (2, 'Programación Intermedia Python'),
 (3, 'Programación Avanzada en Python'),
-(4, 'Programación Básica - Algoritmos');
+(7, 'otro curso de quien sabe que'),
+(9, 'nueva prueba'),
+(11, 'otro ingreso'),
+(12, 'otra prueba super'),
+(13, 'otra prueba super'),
+(16, 'hdfhfdh'),
+(17, 'el ultimo guerrero');
 
 -- --------------------------------------------------------
 
@@ -83,8 +89,7 @@ CREATE TABLE `matricula` (
 INSERT INTO `matricula` (`id`, `idCurso`, `idEstudiante`, `fechaAlta`) VALUES
 (1, 1, 1, '2024-02-25'),
 (2, 2, 1, '2024-02-25'),
-(3, 3, 1, '2024-02-25'),
-(4, 4, 2, '2024-02-25');
+(3, 3, 1, '2024-02-25');
 
 -- --------------------------------------------------------
 
@@ -144,7 +149,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT de la tabla `cursos`
 --
 ALTER TABLE `cursos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT de la tabla `estudia`
