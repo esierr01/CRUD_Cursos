@@ -3,57 +3,44 @@
     padding: 0;
 }
 body{
-    background-color: cadetblue;
+    background-color: #81ecec;
 }
-body .customNavBar{    
-    background: #141E30;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+body .imagenCentral{
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    height: 70vh;
 }
-body .customNavBar a{
-    color: white;
+.customNavBar{
+    background-color: #0984e3;
 }
-.customCard, .customJumbo{
-    background: #000046;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-    width: 28rem;
+.customCard{
+    background-color: #00cec9;
 }
-.customTabla{
-    background: #000046;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #1CB5E0, #000046);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #1CB5E0, #000046); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+.colorModal{
+    background-color: #a29bfe;
 }
-.card-header, .card-body{    
-    color: black;
-    opacity: 1;
-    font-weight: bold;
+.colorTable{
+    margin: 0 auto;
+    background-color: #74b9ff;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid black;
 }
-
-@media (max-width: 1250px) {
-    .customCard{        
-        width: 28rem;
-    }    
+.colorTable td, td{
+    padding: 15px;
+    border: 1px solid black;
 }
-@media (max-width: 992px) {
-    .customCard{        
-        width: 24rem;
-    }    
+.colorTable th{
+    padding: 10px;
+    border: 1px solid black;
 }
-@media (max-width: 850px) {
-    .customCard{        
-        width: 20rem;
-    }    
-}
-@media (max-width: 700px) {
-    .customCard{        
-        width: 18rem;
-    }    
-}
-@media (max-width: 650px) {
-    .customCard{        
-        width: 16rem;
-    }    
+.contieneTabla{
+    width: 60%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center; 
 }
