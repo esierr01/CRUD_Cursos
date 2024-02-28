@@ -4,24 +4,26 @@
     if ($_SESSION['accesoAutorizado']){
         header("Location: /crud_cursos/app/menuPpal/index.php");
     }
-    //verifica si hubo post, los datos de acceso ingresados
+    //verifica si hubo post, con los datos de acceso ingresados
     if($_POST){
         $txtUser=(isset($_POST['txtUser']))?$_POST['txtUser']:"";
         $txtPassword=(isset($_POST['txtPassword']))?$_POST['txtPassword']:"";
-
+        // si los dos datos estan cargados hace verificación, de lo contrario no hace nada
         if($txtUser!='' and $txtPassword!=''){
             require $_SERVER['DOCUMENT_ROOT'].'/crud_cursos/asset/config/db.php';
             $db=new db();
             $conn=$db->conecta();
             $validaUser=$db->validaUser($conn, $txtUser, $txtPassword);
+            //
             if($validaUser){
+                // como encontro usuario, inicializa datos de acceso
                 $_SESSION['accesoAutorizado']=true;
                 $_SESSION['usuarioAcceso']=$validaUser['nombre'];
                 $_SESSION['nivel']=$validaUser['acceso'];
-                //
+                // envia al menu principal
                 header("Location: /crud_cursos/app/menuPpal/index.php");
             } else{                
-                //
+                // muestra mensaje de usuario no existe
                 include($_SERVER['DOCUMENT_ROOT'].'/crud_cursos/app/login/modalUsuarioNoExiste.php');
                 echo '<script>';
                 $mostrarModal = true; 
@@ -36,7 +38,6 @@
     //
     include($_SERVER['DOCUMENT_ROOT'].'/crud_cursos/asset/layout/head.php');
 ?>
-
 
 <form action="" method="post">
     <div class="container-fluid">
@@ -64,7 +65,6 @@
         </div>
     </div>    
 </form>  
-
 
 <?php include($_SERVER['DOCUMENT_ROOT'].'/crud_cursos/asset/layout/foot.php'); ?>
 

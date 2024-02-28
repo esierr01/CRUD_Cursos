@@ -12,16 +12,16 @@
     $db = new db();
     $conn = $db->conecta();
     // hace consulta de todos los cursos existentes y los coloca en variable para poder mostrarlos
-    $listaCursos = $db->consultaTabla($conn, "cursos");
+    $listaCursos = $db->consultaTabla($conn, "estudia");
 ?>
 
 <div class="contieneTabla">
 
     <div class="nav">
         <ul class="me-auto p-0 m-0">
-            <h2 class="text-center mt-5 mb-0 fw-bold">CURSOS</h2>
+            <h2 class="text-center mt-5 mb-0 fw-bold">ESTUDIANTES</h2>
         </ul>
-        <a name="" id="" class="btn btn-sm btn-success mt-5 fw-bold" href="cargarNuevo.php" role="button"><i class="fa-solid fa-plus"></i> NUEVO CURSO</a>
+        <a name="" id="" class="btn btn-sm btn-success mt-5 fw-bold" href="cargarNuevo.php" role="button"><i class="fa-solid fa-plus"></i> NUEVO ESTUDIANTE</a>
     </div>
 
     <hr>
@@ -30,7 +30,8 @@
         <thead>
             <tr>
                 <th scope="col">Id</th>
-                <th scope="col">Nombre del Curso</th>
+                <th scope="col">Nombre del Estudiante</th>
+                <th scope="col">correo</th>
                 <th class="text-center" scope="col">Acciones</th>
             </tr>
         </thead>
@@ -38,7 +39,8 @@
             <?php foreach ($listaCursos as $reg) { ?>
                 <tr>
                     <th scope="row"><?= $reg['id']; ?></th>
-                    <td><?= $reg['nombreCurso']; ?></td>
+                    <td><?= $reg['nombreEstudiante']; ?></td>
+                    <td><?= $reg['correo']; ?></td>
                     <td class="text-center">
                         <form action="" method="post">
                             <a name="" id="" class="btn btn-primary" href="editarExistente.php?id=<?= $reg['id']; ?>" role="button"><i class="fa-regular fa-pen-to-square"></i> Editar</a>

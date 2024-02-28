@@ -44,3 +44,15 @@ body .imagenCentral{
     justify-content: center;
     align-items: center; 
 }
+.contieneDatos{
+    width: 40%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center; 
+}
+.acercade{
+    width: 60%;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center; 
+}

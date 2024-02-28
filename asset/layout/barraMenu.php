@@ -7,7 +7,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
-                <?php if ($_SESSION['accesoAutorizado']){  ?>
+                <?php if ($_SESSION['accesoAutorizado'] and $_SESSION['ver']){  ?>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="/crud_cursos/app/menuPpal/index.php">Home</a>
                     </li>                
@@ -18,7 +18,7 @@
                         <a class="nav-link active" href="/crud_cursos/app/cursos/index.php">Cursos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Alumnos</a>
+                        <a class="nav-link active" href="/crud_cursos/app/estudiantes/index.php">Estudiantes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="/crud_cursos/index.php">Cerrar</a>
@@ -32,6 +32,9 @@
                             <a class="nav-link disabled" aria-disabled="true">Admin</a>
                         </li>
                     <?php } ?>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/crud_cursos/app/menuPpal/acerca.php">Acerca de</a>
+                    </li>
                 <?php } ?>
             </ul>
             <?php if ($_SESSION['accesoAutorizado']){  ?>                
