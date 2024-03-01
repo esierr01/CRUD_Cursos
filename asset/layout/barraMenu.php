@@ -12,7 +12,7 @@
                         <a class="nav-link active" aria-current="page" href="/crud_cursos/app/menuPpal/index.php">Home</a>
                     </li>                
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Matricula</a>
+                        <a class="nav-link active" href="/crud_cursos/app/matricula/index.php">Matricula</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="/crud_cursos/app/cursos/index.php">Cursos</a>

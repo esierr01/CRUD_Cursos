@@ -34,6 +34,19 @@
             return $resultado;
         }
 
+        // funcion para consultar todos los registros de la tabla matricula de la bd
+        public function consultaMatricula($conn){
+            $consultaSql=$conn->prepare("
+                SELECT ma.id, cu.nombreCurso, es.nombreEstudiante, ma.fechaAlta
+                FROM matricula ma 
+                JOIN cursos cu ON ma.idCurso = cu.id
+                JOIN estudia es ON ma.idEstudiante = es.id            
+            ");
+            $consultaSql->execute();
+            $resultado = $consultaSql->fetchAll(PDO::FETCH_ASSOC);
+            return $resultado;
+        }
+
         // funcion para consultar un unico registro de una tabla de la bd por el id
         public function consultaUnUnicoRegPorId($conn, $tabla, $valor){
             $consultaSql=$conn->prepare("SELECT * FROM ".$tabla." WHERE id=:id");
