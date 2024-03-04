@@ -65,6 +65,16 @@
             return $resultado;
         }
 
+        // funcion para verificar que un registro exista en una tabla por dos campos indicados
+        public function validaUnicoRegXdosCampos($conn, $tabla, $campo1, $valor1, $campo2, $valor2){
+            $consultaSql=$conn->prepare("SELECT * FROM ".$tabla." WHERE ".$campo1."=:campo1 AND ".$campo2."=:campo2");
+            $consultaSql->bindParam(':campo1',$valor1);
+            $consultaSql->bindParam(':campo2',$valor2);
+            $consultaSql->execute();
+            $resultado = $consultaSql->fetch(PDO::FETCH_LAZY);
+            return $resultado;
+        }
+
         // funcion para eliminar un registro en una tabla de la bd por el id
         public function eliminaUnRegistroPorId($conn, $tabla, $id){
             $consultaSql=$conn->prepare("DELETE FROM ".$tabla." WHERE id=:id");
@@ -90,6 +100,15 @@
             return;
         }
 
+        // funcion para insertar una matricula nueva
+        public function insertaUnaMatricula($conn, $valor1, $valor2){
+            $consultaSql=$conn->prepare("INSERT INTO matricula (id, idCurso, idEstudiante, fechaAlta) VALUES (null, :txtIdCurso, :txtIdEstudiante, current_timestamp());");
+            $consultaSql->bindParam(':txtIdCurso',$valor1);
+            $consultaSql->bindParam(':txtIdEstudiante',$valor2);
+            $consultaSql->execute();
+            return;
+        }
+
         // funcion para modificar un curso existente
         public function modificaUnCurso($conn, $id, $valor){
             $consultaSql=$conn->prepare("UPDATE cursos SET nombreCurso = :txtNombreCurso WHERE id=:id;");
@@ -104,6 +123,16 @@
             $consultaSql=$conn->prepare("UPDATE estudia SET nombreEstudiante = :txtNombreEstudiante, correo = :txtCorreo WHERE id=:id;");
             $consultaSql->bindParam(':txtNombreEstudiante',$valor1);
             $consultaSql->bindParam(':txtCorreo',$valor2);
+            $consultaSql->bindParam(':id',$id);
+            $consultaSql->execute();
+            return;
+        }
+
+        // funcion para modificar una matricula existente
+        public function modificaUnaMatricula($conn, $id, $txtIdCurso, $txtIdEstudiante){
+            $consultaSql=$conn->prepare("UPDATE matricula SET idcurso=:txtIdCurso, idEstudiante=:txtIdEstudiante, fechaAlta=current_timestamp() WHERE id=:id;");
+            $consultaSql->bindParam(':txtIdCurso',$txtIdCurso);
+            $consultaSql->bindParam(':txtIdEstudiante',$txtIdEstudiante);
             $consultaSql->bindParam(':id',$id);
             $consultaSql->execute();
             return;
